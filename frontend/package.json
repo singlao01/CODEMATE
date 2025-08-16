@@ -1,0 +1,15 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@uiw/react-codemirror": "^4.25.1",
+    "codemirror": "^6.0.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "simple-peer": "^9.11.1"
+  },
+  "devDependencies": {
+    "react-scripts": "5.0.1"
+  }
+}
