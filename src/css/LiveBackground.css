@@ -1,0 +1,56 @@
+.live-bg {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #0f2027, #203a43);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+.voice-btn {
+  margin: 20px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #ffa116;
+  color: white;
+  font-weight: 600;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.voice-btn:hover {
+  transform: scale(1.05);
+  background: #ffb84d;
+}
+
+.voice-popup {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  width: 250px;
+  background: #2b2b3d;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.voice-popup h2 {
+  margin-bottom: 10px;
+}
+
+.voice-popup button {
+  margin-top: 10px;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #ffa116;
+  color: white;
+  font-weight: 600;
+}

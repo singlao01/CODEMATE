@@ -1,0 +1,57 @@
+.dashboard-container {
+  padding: 30px;
+  font-family: "Roboto", sans-serif;
+  background: #1e1e2f;
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* Scoreboard */
+.scoreboard {
+  margin-bottom: 40px;
+}
+
+.scoreboard table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.scoreboard th,
+.scoreboard td {
+  padding: 12px 15px;
+  border: 1px solid #3a3a4d;
+  text-align: center;
+}
+
+.scoreboard th {
+  background-color: #2b2b3d;
+}
+
+.scoreboard tbody tr:hover {
+  background-color: #3a3a4d;
+}
+
+/* Problems grid */
+.problem-list h2 {
+  margin-bottom: 15px;
+}
+
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.problem-card {
+  padding: 15px;
+  background: #2b2b3d;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.problem-card:hover {
+  transform: scale(1.05);
+  background: #3a3a4d;
+}
