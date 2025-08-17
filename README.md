@@ -1,0 +1,1 @@
+CodeMate is a full-stack web application that enables multiple users to write and edit code together in real-time while also communicating through voice chat. It combines collaborative coding with live audio interaction, making it ideal for pair programming, online coding interviews, study groups, or hackathons.
