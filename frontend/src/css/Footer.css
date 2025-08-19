@@ -1,0 +1,33 @@
+.footer {
+  background: #0d0d0d; /* Deep black */
+  color: #f5f5f5;      /* Soft white text */
+  padding: 1rem;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative; /* 👈 not fixed so it won’t overlap content */
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #222; /* subtle top border */
+}
+
+.footer p {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+  color: #bbb; /* softer text color */
+}
+
+.footer-links {
+  margin-top: 0.4rem;
+}
+
+.footer-links a {
+  margin: 0 0.8rem;
+  color: #00adb5; /* cyan accent */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #f5f5f5; /* white on hover */
+}
