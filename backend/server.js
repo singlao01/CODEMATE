@@ -7,15 +7,12 @@ dotenv.config();
 const app = express();
 app.use(cors());
 app.use(express.json());
-
-// MongoDB connection
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => console.log("✅ MongoDB connected"))
   .catch(err => console.error("❌ MongoDB connection error:", err));
 
-// ---------------- USERS ----------------
 const UserSchema = new mongoose.Schema({
   userId: { type: String, required: true, unique: true },
   createdAt: { type: Date, default: Date.now }
@@ -41,8 +38,7 @@ app.get("/api/users", async (req, res) => {
   res.json(users);
 });
 
-// ---------------- ROOMS ----------------
-// Room schema with multiple players
+
 const RoomSchema = new mongoose.Schema({
   roomId: { type: String, required: true, unique: true },
   players: [
@@ -55,7 +51,7 @@ const RoomSchema = new mongoose.Schema({
 
 const Room = mongoose.model("Room", RoomSchema);
 
-// Create or Join Room
+
 app.post("/api/rooms/join", async (req, res) => {
   try {
     const { roomId, playerName } = req.body;
@@ -66,12 +62,12 @@ app.post("/api/rooms/join", async (req, res) => {
     let room = await Room.findOne({ roomId });
 
     if (room) {
-      // Room exists → add player
+      
       room.players.push({ playerName });
       await room.save();
       return res.json({ message: "Joined existing room", room });
     } else {
-      // Room doesn’t exist → create new
+     
       const newRoom = new Room({
         roomId,
         players: [{ playerName }]
@@ -84,20 +80,19 @@ app.post("/api/rooms/join", async (req, res) => {
   }
 });
 
-// Get all rooms
+
 app.get("/api/rooms", async (req, res) => {
   const rooms = await Room.find();
   res.json(rooms);
 });
 
-// Get specific room by ID
-// server.js or routes/room.js
+
 app.post("/api/rooms/join", (req, res) => {
   const { playerName, roomId } = req.body;
   if (!playerName || !roomId) {
     return res.status(400).json({ msg: "Player name and roomId required" });
   }
-  // ✅ success response
+
   return res.json({ success: true, playerName, roomId });
 });
 
